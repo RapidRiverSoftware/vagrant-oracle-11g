@@ -5,7 +5,7 @@ node oracle {
   class {'oracle::server':
 	  oracle_user	=> "oracle",
 	  dba_group		=> "dba",
-	  sid			=> "orcl",
+	  sid			    => "orcl",
 	  oracle_root	=> "/oracle",
 	  password		=> "password",
   } 
