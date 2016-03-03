@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   large_oracle_disk = File.join(disk_dir, 'oracle.vdi')
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ['createhd', '--filename', large_oracle_disk, '--size', 60 * 1024] unless File.exist?(large_oracle_disk)
+    vb.customize ['createhd', '--filename', large_oracle_disk, '--size', 20 * 1024] unless File.exist?(large_oracle_disk)
     vb.customize ['storageattach', :id, '--storagectl', 'SATA', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', large_oracle_disk]
     vb.customize ["modifyvm", :id,
                   "--name", "oradb",
